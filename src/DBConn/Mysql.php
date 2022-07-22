@@ -5,7 +5,7 @@ use ShuttleExport\Exception;
 
 class Mysql extends DBConn {
 	function connect() {
-		$this->connection = mysql_connect($this->host . ':' . $this->port, $this->username, $this->password);
+		$this->connection = @mysql_connect($this->host . ':' . $this->port, $this->username, $this->password);
 		if (!$this->connection) {
 			throw new Exception("Couldn't connect to the database: " . mysql_error());
 		}

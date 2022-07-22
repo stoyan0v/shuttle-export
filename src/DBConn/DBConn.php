@@ -15,11 +15,16 @@ abstract class DBConn {
 	protected $connection;
 
 	function __construct($options) {
-		$this->host = $options['db_host'];
+		preg_match("~([A-Za-z0-9\-\.]+):?([0-9]+)?~", $options['host'], $parsed_host );
+
+		$this->host = ! empty( $parsed_host[1] ) ? $parsed_host[1] : 'localhost';
+		$this->port = ! empty( $parsed_host[2] ) ? $parsed_host[2] : 3306;
+
+		//$this->host = $options['db_host'];
+		//$this->port = $options['db_port'];
 		$this->username = $options['db_user'];
 		$this->password = $options['db_password'];
 		$this->name = $options['db_name'];
-		$this->port = $options['db_port'];
 		$this->charset = $options['charset'];
 		$this->prefix = $options['prefix'];
 	}

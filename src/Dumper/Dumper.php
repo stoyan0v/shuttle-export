@@ -45,7 +45,7 @@ abstract class Dumper {
 
 	private function validate_options($db_options) {
 		$options = [
-			'db_host'        => [ 'required' => false, 'default' => '127.0.0.1' ],
+			'db_host'        => [ 'required' => false, 'default' => 'localhost' ],
 			'db_port'        => [ 'required' => false, 'default' => 3306        ],
 			'db_user'        => [ 'required' => false, 'default' => 'root'      ],
 			'db_password'    => [ 'required' => false, 'default' => ''          ],
