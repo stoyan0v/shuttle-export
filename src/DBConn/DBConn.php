@@ -15,7 +15,7 @@ abstract class DBConn {
 	protected $connection;
 
 	function __construct($options) {
-		preg_match("~([A-Za-z0-9\-\.]+):?([0-9]+)?~", $options['host'], $parsed_host );
+		preg_match("~([A-Za-z0-9\-\.]+):?([0-9]+)?~", $options['db_host'], $parsed_host );
 
 		$this->host = ! empty( $parsed_host[1] ) ? $parsed_host[1] : 'localhost';
 		$this->port = ! empty( $parsed_host[2] ) ? $parsed_host[2] : 3306;
