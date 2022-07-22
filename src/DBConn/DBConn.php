@@ -25,7 +25,7 @@ abstract class DBConn {
 		$this->username = $options['db_user'];
 		$this->password = $options['db_password'];
 		$this->name = $options['db_name'];
-		$this->charset = $options['charset'];
+		$this->charset = 'utf8';
 		$this->prefix = $options['prefix'];
 	}
 
