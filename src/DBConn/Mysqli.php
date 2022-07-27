@@ -4,7 +4,7 @@ use ShuttleExport\Exception;
 
 class Mysqli extends DBConn {
 	function connect() {
-		$this->connection = new \MySQLi($this->host, $this->username, $this->password, $this->name, $this->port);
+		$this->connection = @new \MySQLi($this->host, $this->username, $this->password, $this->name, $this->port);
 
 		if ($this->connection->connect_error) {
 			throw new Exception("Couldn't connect to the database: " . $this->connection->connect_error);
