@@ -7,6 +7,11 @@ use Symfony\Component\Process\ExecutableFinder;
  * Shell abstraction; It's just a handy proxy for Symfony Process component. 
  */
 class Shell {
+	/**
+	 * @var ExecutableFinder
+	 */
+	public $executable_finder;
+
 	function __construct() {
 		$this->executable_finder = new ExecutableFinder();
 	}

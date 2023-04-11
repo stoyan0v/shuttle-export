@@ -3,6 +3,11 @@ namespace ShuttleExport\Dumper;
 use ShuttleExport\Shell;
 
 class Factory {
+	/**
+	 * @var Shell
+	 */
+	public $shell;
+
 	function __construct() {
 		$this->shell = new Shell();
 	}

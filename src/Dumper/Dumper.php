@@ -20,6 +20,11 @@ abstract class Dumper {
 	public $only_tables;
 
 	/**
+	 * Export file
+	 */
+	public $export_file;
+
+	/**
 	 * Specified tables to exclude
 	 */
 	public $exclude_tables = array();
